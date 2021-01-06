@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title routerLink="/home" style="text-align: center">Audio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content id="subtitles">
+</ion-content> -->
+
+<div id="subtitles" class="media"></div>
+
+<!-- <div class="controls">
+  <span>
+    <i class="fa fa-backward icons" style="margin-left: 0"></i>
+    <i class="fa fa-caret-left icons"></i>
+    <i *ngIf="!played" class="fa fa-play icons" (click)=playIcon(audio)></i>
+    <i *ngIf="played" class="fa fa-pause icons" (click)=pauseIcon(audio)></i>
+    <i class="fa fa-caret-right icons"></i>
+    <i class="fa fa-forward icons"></i>
+  </span>
+</div> -->
+
+<ion-content padding >
+  <audio #audio controls preload="auto" (timeupdate)="onUpdate($event)" autoplay
+    (pause)="paused($event)" (play)="play($event)" >
+    <source src="assets/audio/despacito.mp3" type="audio/mpeg">
+      <!-- <source src="assets/audio/cup.mp3" type="audio/mpeg"> -->
+  </audio>
+  <button (click)="beatMe(audio)">2x</button>
+  <button ion-button full (click)="captureAudio()">Capture Audio</button>
+</ion-content>

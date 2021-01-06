@@ -1,5 +1,7 @@
 {
   "name": "LS-ststem",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
